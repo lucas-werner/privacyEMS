@@ -110,27 +110,32 @@
     <script>
         // --- DATA ---
         const projectData = [
-            { pma: "PMA 2 - Maintain Governance", task: "Privacy Governance Policy", status: "Review", endDate: "2025-08-26" },
-            { pma: "PMA 3 - Maintain Records of Processing Activities", task: "RoPA Questionnaire Automation", status: "Completed", endDate: "2025-08-12" },
-            { pma: "PMA 3 - Maintain Records of Processing Activities", task: "Record of Processing Activities", status: "Completed", endDate: "2025-08-12" },
-            { pma: "PMA 4 - Privacy Policy & Document Management", task: "Privacy Statement Website (external)", status: "Completed", endDate: "2025-08-19" },
-            { pma: "PMA 4 - Privacy Policy & Document Management", task: "Cookie Notice (website)", status: "In progress", endDate: "2025-08-19" },
-            { pma: "PMA 4 - Privacy Policy & Document Management", task: "Privacy Statement (internal)", status: "Review", endDate: "2025-08-26" },
-            { pma: "PMA 4 - Privacy Policy & Document Management", task: "Data Retention Schedule", status: "Review", endDate: "2025-09-16" },
-            { pma: "PMA 5 - Education (training & awareness)", task: "GDPR Awareness training", status: "Blocked", endDate: "2025-10-31" },
-            { pma: "PMA 6 - Manage Third Party Risks", task: "Vendor List: DPA", status: "Completed", endDate: "2025-09-09" },
-            { pma: "PMA 6 - Manage Third Party Risks", task: "DPA Due Diligence Checklist", status: "Completed", endDate: "2025-09-09" },
-            { pma: "PMA 6 - Manage Third Party Risks", task: "Intragroup Sharing Agreement", status: "In progress", endDate: "2025-09-23" },
-            { pma: "PMA 7 - Complaints & DSR Management", task: "Data Subject Rights Procedure", status: "Completed", endDate: "2025-09-02" },
-            { pma: "PMA 7 - Complaints & DSR Management", task: "DSR Request Log Register", status: "Completed", endDate: "2025-09-02" },
-            { pma: "PMA 8 - Monitor New Operational Practices", task: "Policy for Data Protection Impact Assessments", status: "Review", endDate: "2025-09-30" },
-            { pma: "PMA 8 - Monitor New Operational Practices", task: "CCTV Pre-DPIA", status: "Not started", endDate: "2025-10-01" },
-            { pma: "PMA 9 - Data Breach Management Program", task: "Data Breach Procedure", status: "Review", endDate: "2025-08-26" },
-            { pma: "PMA 9 - Data Breach Management Program", task: "Data Breach Register", status: "Completed", endDate: "2025-08-26" },
+            { pma: "PMA 3 - Maintain Records of Processing Activities", task: "RoPA Questionnaire Automation", status: "Completed", owner: "Lucas Noronha", endDate: "2025-08-12", document: "PMA 03 Update Records of Processing Activities", notes: "" },
+            { pma: "PMA 3 - Maintain Records of Processing Activities", task: "Record of Processing Activities", status: "Completed", owner: "Lucas Noronha", endDate: "2025-08-12", document: "Record of Processing Activities - EMS Ambulance", notes: "" },
+            { pma: "PMA 4 - Privacy Policy & Document Management", task: "Privacy Statement Website (external)", status: "Completed", owner: "Lucas Noronha", endDate: "2025-08-19", document: "External Privacy Statement", notes: "" },
+            { pma: "PMA 4 - Privacy Policy & Document Management", task: "Cookie Notice (website)", status: "Completed", owner: "Hank Melse", endDate: "2025-08-19", document: "Cookie Statement", notes: "Marketing agency needs to update cookie policy list. Example dropdown: https://www.dpoconsultancy.com/cookie-statement/" },
+            { pma: "PMA 4 - Privacy Policy & Document Management", task: "Privacy Statement (internal)", status: "To Sign", owner: "Lucas Noronha", endDate: "2025-08-26", document: "Internal Privacy Statement", notes: "Dee Khettry four-eyes review?" },
+            { pma: "PMA 2 - Maintain Governance", task: "Privacy Governance Policy", status: "To Sign", owner: "Lucas Noronha", endDate: "2025-08-26", document: "Privacy Governance at EMS Ambulance", notes: "Helma Ligtenbarg helping review the structure." },
+            { pma: "PMA 9 - Data Breach Management Program", task: "Data Breach Procedure", status: "To Sign", owner: "Lucas Noronha", endDate: "2025-08-26", document: "Data Breach Standard Operating Procedure", notes: "" },
+            { pma: "PMA 9 - Data Breach Management Program", task: "Data Breach Register", status: "Completed", owner: "Lucas Noronha", endDate: "2025-08-26", document: "Data Breach Register EMS Ambulance", notes: "" },
+            { pma: "PMA 7 - Complaints & DSR Management", task: "Data Subject Rights Procedure", status: "To Sign", owner: "Hank Melse", endDate: "2025-09-02", document: "Data Subject Rights (DSR) Procedure Version 1.0", notes: "Lucas to review before sign-off." },
+            { pma: "PMA 7 - Complaints & DSR Management", task: "DSR Request Log Register", status: "Completed", owner: "Hank Melse", endDate: "2025-09-02", document: "DSR Register EN_v1.0", notes: "" },
+            { pma: "PMA 5 - Education (training & awareness)", task: "GDPR Awareness training", status: "Blocked", owner: "Lucas Noronha", endDate: null, document: "EMS - GDPR Crash Course", notes: "Training on data breaches." },
+            { pma: "PMA 6 - Manage Third Party Risks", task: "Vendor List: DPA", status: "Completed", owner: "Hank Melse", endDate: "2025-09-09", document: "Vendor List - DPA Checklist", notes: "Medical email ✅" },
+            { pma: "PMA 6 - Manage Third Party Risks", task: "DPA Due Diligence Checklist", status: "Completed", owner: "Lucas Noronha", endDate: "2025-09-09", document: "DPA Checklist v1.0", notes: "" },
+            { pma: "PMA 4 - Privacy Policy & Document Management", task: "Data Retention Schedule", status: "To Sign", owner: "Lucas Noronha", endDate: "2025-09-16", document: "Data Retention Policy - EMS Ambulance", notes: "To review." },
+            { pma: "PMA 6 - Manage Third Party Risks", task: "Intragroup Sharing Agreement", status: "To Sign", owner: "Lucas Noronha", endDate: "2025-09-23", document: "Intragroup Sharing Agreement - EMS Ambulance", notes: "Check legal entities to sign." },
+            { pma: "PMA 8 - Monitor New Operational Practices", task: "Policy for Data Protection Impact Assessments", status: "To Sign", owner: "Lucas Noronha", endDate: "2025-09-23", document: "DPIA Procedure - EMS", notes: "" },
+            { pma: "PMA 8 - Monitor New Operational Practices", task: "CCTV Pre-DPIA", status: "Completed", owner: "Lucas Noronha", endDate: "2025-09-30", document: "CCTV Pre-DPIA Checklist EMS_23092025.pdf", notes: "" },
+            { pma: "PMA 8 - Monitor New Operational Practices", task: "AI Preliminary Risk Assessment", status: "Completed", owner: "Lucas Noronha", endDate: "2025-09-30", document: "EMS Preliminary AI Assessment.pdf", notes: "" },
+            { pma: "PMA 6 - Manage Third Party Risks", task: "Sign DPA SquareMedia", status: "Blocked", owner: "Lucas Noronha", endDate: "2025-10-10", document: "(New) DATA PROCESSING AGREEMENT (DPA) - Score Media", notes: "Waiting for feedback from Score Media legal. Proposed deadline October 10." },
+            { pma: "PMA 4 - Privacy Policy & Document Management", task: "Standardize Layout/Name of Policies", status: "Completed", owner: "Lucas Noronha", endDate: "2025-10-07", document: "", notes: "" },
+            { pma: "PMA 2 - Maintain Governance", task: "Determine the requirement for EMS to appoint a DPO", status: "Completed", owner: "Lucas Noronha", endDate: "2025-10-07", document: "Recommendation on the appointment of a DPO for EMS Ambulance.pdf", notes: "" },
+            { pma: "PMA 10 - Track External Criteria", task: "Final Report: achievements & gaps", status: "Not Started", owner: "Lucas Noronha", endDate: "2025-10-14", document: "", notes: "" },
         ];
         
         const pmaList = [
-            "PMA 1 - Assess Data Handling Practices", 
+            "PMA 1 - Assess Data Handling Practices",
             "PMA 2 - Maintain Governance", 
             "PMA 3 - Maintain Records of Processing Activities",
             "PMA 4 - Privacy Policy & Document Management", 
@@ -143,20 +148,22 @@
         ];
         
         // --- SCRIPT LOGIC ---
+        const COMPLETED_STATUSES = ['completed'];
+
         document.addEventListener('DOMContentLoaded', function () {
-            const today = new Date('2025-09-11T12:00:00'); 
-            
+            const today = new Date('2025-09-11T12:00:00');
+
             const currentDateEl = document.getElementById('currentDate');
             if (currentDateEl) {
                 currentDateEl.textContent = today.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
             }
             document.getElementById('currentYear').textContent = today.getFullYear();
 
-            // A task is considered "complete" if its status is 'Completed' or 'Review'.
-            const completedTasks = projectData.filter(t => ['completed', 'review'].includes(t.status.toLowerCase())).length;
-            const inProgressTasks = projectData.filter(t => ['in progress', 'blocked', 'not started'].includes(t.status.toLowerCase())).length;
-            // A task is "overdue" if it's not completed/in review AND its end date is in the past.
-            const overdueTasks = projectData.filter(t => !['completed', 'review'].includes(t.status.toLowerCase()) && new Date(t.endDate) < today).length;
+            // A task is considered "complete" when its status is marked as 'Completed'.
+            const completedTasks = projectData.filter(t => COMPLETED_STATUSES.includes(t.status.toLowerCase())).length;
+            const inProgressTasks = projectData.filter(t => !COMPLETED_STATUSES.includes(t.status.toLowerCase())).length;
+            // A task is "overdue" if it's not completed AND its end date is in the past.
+            const overdueTasks = projectData.filter(t => !COMPLETED_STATUSES.includes(t.status.toLowerCase()) && t.endDate && new Date(t.endDate) < today).length;
             const totalTasks = projectData.length;
             const overallProgress = totalTasks > 0 ? Math.round((completedTasks / totalTasks) * 100) : 0;
 
@@ -198,20 +205,38 @@
                 const pmaCard = document.createElement('div');
                 pmaCard.className = 'card flex flex-col p-5';
 
-                const pmaCompleted = pmaTasks.filter(t => ['completed', 'review'].includes(t.status.toLowerCase())).length;
+                const [pmaCode, pmaName] = (() => {
+                    const parts = pmaTitle.split(' - ');
+                    if (parts.length === 1) {
+                        return [parts[0], ''];
+                    }
+                    return [parts[0], parts.slice(1).join(' - ')];
+                })();
+
+                const pmaCompleted = pmaTasks.filter(t => COMPLETED_STATUSES.includes(t.status.toLowerCase())).length;
                 const pmaTotal = pmaTasks.length;
-                const pmaProgress = pmaTotal > 0 ? Math.round((pmaCompleted / pmaTotal) * 100) : 100;
 
                 let tasksHtml = '<div class="text-gray-500 italic mt-4 text-sm">No tasks defined for this PMA.</div>';
                 if (pmaTotal > 0) {
                     tasksHtml = pmaTasks.map(task => {
-                        const isOverdue = !['completed', 'review'].includes(task.status.toLowerCase()) && new Date(task.endDate) < today;
+                        const isOverdue = !COMPLETED_STATUSES.includes(task.status.toLowerCase()) && task.endDate && new Date(task.endDate) < today;
                         const statusInfo = getStatusInfo(task.status, isOverdue);
-                        
+                        const dueDateText = formatDate(task.endDate, today);
+                        const ownerLine = `<div><span class="font-semibold text-gray-600">Owner:</span> ${task.owner || 'TBD'}</div>`;
+                        const documentLine = `<div><span class="font-semibold text-gray-600">Document:</span> ${task.document || 'TBD'}</div>`;
+                        const dueLine = `<div><span class="font-semibold text-gray-600">Due:</span> ${dueDateText}</div>`;
+                        const notesLine = task.notes ? `<div class="text-gray-500">${task.notes}</div>` : '';
+
                         return `
                             <div class="flex items-start justify-between py-2 border-b border-gray-100 last:border-b-0">
                                 <div class="flex-grow pr-2">
                                     <p class="font-medium text-gray-700">${task.task}</p>
+                                    <div class="mt-2 text-xs text-gray-500 space-y-1">
+                                        ${ownerLine}
+                                        ${dueLine}
+                                        ${documentLine}
+                                        ${notesLine}
+                                    </div>
                                 </div>
                                 <span class="${statusInfo.classes} text-xs font-semibold inline-flex items-center px-2.5 py-0.5 rounded-full">
                                     ${statusInfo.icon}
@@ -221,23 +246,39 @@
                     }).join('');
                 }
 
+                const summaryText = pmaTotal > 0
+                    ? `${pmaCompleted} of ${pmaTotal} task${pmaTotal === 1 ? '' : 's'} completed`
+                    : 'No tasks defined for this PMA yet.';
+
+                const titleHtml = `
+                    <div class="flex items-baseline gap-2">
+                        <span class="text-sm font-semibold text-blue-600 uppercase tracking-wide">${pmaCode}</span>
+                        <h3 class="text-lg font-bold text-gray-800">${pmaName || pmaCode}</h3>
+                    </div>`;
+
                 pmaCard.innerHTML = `
                     <div class="flex-grow">
-                        <h3 class="text-lg font-bold text-gray-800">${pmaTitle.split(' - ')[1]}</h3>
-                        <p class="text-xs text-gray-400 font-medium uppercase">${pmaTitle.split(' - ')[0]}</p>
-                        <div class="mt-3">
-                            <div class="flex justify-between mb-1">
-                                <span class="text-sm font-medium text-blue-700">Progress</span>
-                                <span class="text-sm font-medium text-blue-700">${pmaProgress}%</span>
-                            </div>
-                            <div class="w-full bg-gray-200 rounded-full h-2.5">
-                                <div class="bg-blue-600 h-2.5 rounded-full" style="width: ${pmaProgress}%"></div>
-                            </div>
-                        </div>
+                        ${titleHtml}
+                        <p class="mt-3 text-sm text-gray-600">${summaryText}</p>
                         <div class="mt-4 space-y-2">${tasksHtml}</div>
                     </div>`;
                 pmaGrid.appendChild(pmaCard);
             });
+        }
+
+        function formatDate(dateString, today) {
+            if (!dateString) {
+                return 'TBD';
+            }
+            const date = new Date(dateString);
+            if (isNaN(date.getTime())) {
+                return 'TBD';
+            }
+            const options = { month: 'short', day: 'numeric' };
+            if (date.getFullYear() !== today.getFullYear()) {
+                options.year = 'numeric';
+            }
+            return date.toLocaleDateString('en-US', options);
         }
 
         function getStatusInfo(status, isOverdue) {
@@ -248,8 +289,9 @@
                 case 'completed': return { text: 'Completed', classes: 'bg-green-100 text-green-800', icon: `<svg class="w-4 h-4 mr-1.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>` };
                 case 'in progress': return { text: 'In Progress', classes: 'bg-yellow-100 text-yellow-800', icon: `<svg class="w-4 h-4 mr-1.5 animate-spin" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>` };
                 case 'review': return { text: 'Review', classes: 'bg-indigo-100 text-indigo-800', icon: `<svg class="w-4 h-4 mr-1.5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 12.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z"></path><path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.022 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"></path></svg>` };
+                case 'to sign': return { text: 'Awaiting Signature', classes: 'bg-blue-100 text-blue-800', icon: `<svg class="w-4 h-4 mr-1.5" fill="currentColor" viewBox="0 0 20 20"><path d="M3 4a2 2 0 012-2h6a2 2 0 011.732 1H15a2 2 0 012 2v1h-2V5H5v10h4v2H5a2 2 0 01-2-2V4z"></path><path d="M15 12h3l-4 7-2-3-3 3 4-7h2z"></path></svg>` };
                 case 'blocked': return { text: 'Blocked', classes: 'bg-orange-100 text-orange-800', icon: `<svg class="w-4 h-4 mr-1.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 1a9 9 0 100 18 9 9 0 000-18zM8.707 5.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 5.293z" clip-rule="evenodd" /></svg>` };
-                case 'not started': return { text: 'Not Started', classes: 'bg-gray-200 text-gray-800', icon:'' };
+                case 'not started': return { text: 'Not Started', classes: 'bg-gray-200 text-gray-800', icon: '' };
                 default: return { text: status, classes: 'bg-gray-200 text-gray-800', icon:'' };
             }
         }
